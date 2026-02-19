@@ -1,0 +1,13 @@
+services:
+  bourbon-vault:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - bourbon-data:/app/data
+      - bourbon-uploads:/app/backend/uploads
+    restart: unless-stopped
+
+volumes:
+  bourbon-data:
+  bourbon-uploads:
