@@ -8,6 +8,7 @@ RUN npm run build
 
 # Stage 2: Run the backend and serve the built frontend
 FROM node:22-alpine
+RUN apk add --no-cache python3 make g++
 WORKDIR /app/backend
 COPY backend/package*.json ./
 RUN npm install --omit=dev
